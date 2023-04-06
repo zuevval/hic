@@ -1,0 +1,4 @@
+[submodule "HiSV"]
+	path = HiSV
+	url = https://github.com/zuevval/HiSV.git
+	branch = develop

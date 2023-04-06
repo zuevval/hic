@@ -1,0 +1,7 @@
+name: hic
+channels:
+  - conda-forge
+dependencies:
+  - python=3.7
+  - pip:
+      - -r HiSV/requirements.txt
