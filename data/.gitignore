@@ -1,0 +1,4 @@
+# Hi-C raw data
+*.hic
+*.cool
+*.tsv

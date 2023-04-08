@@ -1,8 +1,11 @@
 name: hic
 channels:
   - conda-forge
+  - bioconda
 dependencies:
   - python=3.7
   - pip
+  - cooler
+  - hicexplorer
   - pip:
       - -r HiSV/requirements.txt
