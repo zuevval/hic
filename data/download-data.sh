@@ -6,6 +6,14 @@ wget "https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM1551nnn/GSM1551620/suppl/${hic
 conda activate ../venv
 hicConvertFormat -m $hicFileName -o K562.cool --inputFormat hic --outputFormat cool --resolutions 50000
 
-# extract pixels to TSV (TODO: extract a single chromosome)
-cooler dump K562_50000.cool &> K562_50000.tsv
+# download reference chromosomes lengths from the UCSC genome browser. TODO modify according to my needs & upload to server
+export refLenFname=hg19.chrom.sizes
+wget http://hgdownload.soe.ucsc.edu/goldenPath/hg19/bigZips/${refLenFname}
 
+# convert from Cooler format to HiSV format
+export hiSvDataDir=$(pwd)/hiSvInput
+export hiSvDir=../HiSV
+python ${hiSvDir}/convert_type/hiccovert.py -o $hiSvDataDir -m K562_50000.cool -t cool
+
+# run HiSV
+python ${hiSvDir}/HiSV_code/HiSV.py -o $(pwd)/hiSvOutput -l $(pwd)/${refLenFname} -f $hiSvDataDir
