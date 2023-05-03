@@ -5,3 +5,6 @@
 *matrix.txt
 chr*.txt
 *.sizes
+
+K562*
+GM12878*

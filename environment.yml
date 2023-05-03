@@ -3,9 +3,12 @@ channels:
   - conda-forge
   - bioconda
 dependencies:
-  - python=3.7
-  - pip
+  - catboost
   - cooler
   - hicexplorer
+  - jupyter
+  - matplotlib
+  - pip
+  - python=3.7
   - pip:
       - -r HiSV/requirements.txt
