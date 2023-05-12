@@ -4,6 +4,7 @@
 *.tsv
 *matrix.txt
 chr*.txt
+HiSV*result.txt
 *.sizes
 
 K562*

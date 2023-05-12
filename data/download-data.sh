@@ -37,7 +37,7 @@ for i in {1..22} X Y; do
 done
 
 # run HiSV
-python ${hiSvDir}/HiSV_code/HiSV.py -o $(pwd)/hiSvOutput -l $(pwd)/$filteredRefLenFname -f $hiSvDataDir
+python ${hiSvDir}/HiSV_code/HiSV.py -o $(pwd)/hiSvOutput -l $(pwd)/$filteredRefLenFname -f $hiSvDataDir -c 0.2
 
 # Download features for two chromosomes in K562 and GM12878
 wget https://zenodo.org/record/3525510/files/K562.tgz
